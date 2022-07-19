@@ -1,0 +1,6 @@
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\bin\Debug\Encryption.dll
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\bin\Debug\Encryption.pdb
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\obj\Debug\Encryption.csproj.AssemblyReference.cache
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\obj\Debug\Encryption.csproj.CoreCompileInputs.cache
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\obj\Debug\Encryption.dll
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\Encryption\obj\Debug\Encryption.pdb

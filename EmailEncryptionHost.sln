@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailEncryptionHost", "EmailEncryptionHost\EmailEncryptionHost.csproj", "{1037B1A6-301A-4D04-9457-02046C3933B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAServer", "..\..\..\..\Source\Repos\CAServer\CAServer.csproj", "{A550ECDB-0D98-4087-99A6-578BB20BA7A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "Encryption\Encryption.csproj", "{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamSupport", "StreamSupport\StreamSupport.csproj", "{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Amulet|Any CPU = Amulet|Any CPU
+		Amulet|x86 = Amulet|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Amulet|Any CPU.ActiveCfg = Amulet|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Amulet|x86.ActiveCfg = Amulet|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Amulet|x86.Build.0 = Amulet|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Debug|x86.ActiveCfg = Debug|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Debug|x86.Build.0 = Debug|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Release|Any CPU.ActiveCfg = Release|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Release|x86.ActiveCfg = Release|x86
+		{1037B1A6-301A-4D04-9457-02046C3933B6}.Release|x86.Build.0 = Release|x86
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Amulet|Any CPU.ActiveCfg = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Amulet|Any CPU.Build.0 = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Amulet|x86.ActiveCfg = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Amulet|x86.Build.0 = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Debug|x86.Build.0 = Debug|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{A550ECDB-0D98-4087-99A6-578BB20BA7A4}.Release|x86.Build.0 = Release|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Amulet|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Amulet|Any CPU.Build.0 = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Amulet|x86.ActiveCfg = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Amulet|x86.Build.0 = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Debug|x86.Build.0 = Debug|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Release|x86.ActiveCfg = Release|Any CPU
+		{B94E7B94-C1DF-4A1E-AD32-8B079AC9BAB3}.Release|x86.Build.0 = Release|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Amulet|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Amulet|Any CPU.Build.0 = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Amulet|x86.ActiveCfg = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Amulet|x86.Build.0 = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Debug|x86.Build.0 = Debug|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {241FD0CA-A06E-4A65-B7B9-CA6D910B47BA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\bin\Debug\StreamSupport.dll
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\bin\Debug\StreamSupport.pdb
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\obj\Debug\StreamSupport.csproj.AssemblyReference.cache
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\obj\Debug\StreamSupport.csproj.CoreCompileInputs.cache
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\obj\Debug\StreamSupport.dll
+C:\Users\USER\My Documents\Visual Studio 2019\Projects\EmailEncryptionHost\StreamSupport\obj\Debug\StreamSupport.pdb
