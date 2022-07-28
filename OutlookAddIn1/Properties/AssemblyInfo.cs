@@ -1,18 +1,17 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
-
+using System.Security;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EmailEncryptionHost")]
+[assembly: AssemblyTitle("OutlookAddIn1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Intel")]
-[assembly: AssemblyProduct("EmailEncryptionHost")]
-[assembly: AssemblyCopyright("Copyright © Intel 2018")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("OutlookAddIn1")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4eae5ad4-925f-48ae-a3ef-54cd6b2bede8")]
+[assembly: Guid("775601fd-acb0-46ad-a2f8-4f76bcd873e5")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+

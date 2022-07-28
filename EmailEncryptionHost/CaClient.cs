@@ -6,13 +6,14 @@ using System.Net.Sockets;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using StreamSupport;
 
 namespace EmailEncryptionHost
 {
     class CaClient
     {
         string email = "";
-        TlsClient tls = new TlsClient(serverName);
+        TlsClient tls = new TlsClient(serverName,new IPEndPoint(IPAddress.Parse("127.0.0.1"),1000));
         byte[] pb = null;
         private X509Certificate caCertificate = null;
         static string serverName="IID";
@@ -41,7 +42,7 @@ namespace EmailEncryptionHost
         }
         public void SetMyPublicKey(byte[] pb)
         {
-            pb = Tools.ArrayUnion(BitConverter.GetBytes(0), pb);
+            pb = Tools.ArrayUnion(BitConverter.GetBytes(0), pb.Concat(Encoding.UTF8.GetBytes(email)).ToArray());
             pb= tls.sendMessage(pb);        
         }
         private X509Certificate2 ReadCaCertificate()

@@ -7,20 +7,21 @@ using System.Net.Sockets;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using StreamSupport;
-namespace EmailEncryptionHost
+namespace StreamSupport
 {
-    class TlsClient
+    public class TlsClient
     {
         TcpClient client = new TcpClient();
-        static IPAddress iP = IPAddress.Parse("127.0.0.1");
-        static int port = 1000;
+        static IPAddress iP;
+        static int port;
         SslStream _stream = null;
         string ServerName;
         TlsStreamSup TlsStreamSup = new TlsStreamSup();
-        public TlsClient(string serverName)
+        public TlsClient(string serverName,IPEndPoint endPoint)
         {
             ServerName = serverName;
+            iP = endPoint.Address;
+            port = endPoint.Port;
         }
         SslStream stream
         {

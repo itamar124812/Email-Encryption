@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "Encryption\En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamSupport", "StreamSupport\StreamSupport.csproj", "{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutlookAddIn", "..\..\..\..\Downloads\OutlookAddIn (extract.me)\OutlookAddIn\OutlookAddIn.csproj", "{2DC6653F-A4FA-4908-8423-C54A00AA1922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emailClient", "emailClient\emailClient.csproj", "{DADDA088-F6C0-4A31-8484-4D018E22B1D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Amulet|Any CPU = Amulet|Any CPU
@@ -66,6 +70,30 @@ Global
 		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|x86.ActiveCfg = Release|Any CPU
 		{5DFB6F02-A56D-456C-BE82-B5F699C0CD9C}.Release|x86.Build.0 = Release|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Amulet|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Amulet|Any CPU.Build.0 = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Amulet|x86.ActiveCfg = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Amulet|x86.Build.0 = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Debug|x86.Build.0 = Debug|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DC6653F-A4FA-4908-8423-C54A00AA1922}.Release|x86.Build.0 = Release|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Amulet|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Amulet|Any CPU.Build.0 = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Amulet|x86.ActiveCfg = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Amulet|x86.Build.0 = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{DADDA088-F6C0-4A31-8484-4D018E22B1D9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
