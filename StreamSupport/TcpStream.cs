@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net.Security;
-using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
 
 namespace StreamSupport
 {
-    public class TlsStreamSup : streamSupport<SslStream>
+    public class TcpStream : streamSupport<NetworkStream>
     {
-        public byte[] ReadStream(SslStream stream)
+        public byte[] ReadStream(NetworkStream stream)
         {
             byte[] buffer = new byte[2048];
             byte[] result;
@@ -32,25 +30,24 @@ namespace StreamSupport
                     }
                     else
                     {
-                        length += stream.Read(buffer, length, buffer.Length - length);
-                        message = Encoding.UTF8.GetString(buffer);
+                        break;
                     }
                 }
             }
             result = new byte[length];
             Array.Copy(buffer, result, result.Length);
             return result;
-        }
-
-        public void WriteMessage(byte[] message, SslStream stream)
+    }
+       
+        public void WriteMessage(byte[] message, NetworkStream stream)
         {
             if (stream.CanWrite)
             {
-                stream.Write(message);
-                stream.Write(Encoding.UTF8.GetBytes("<EOF>"));
+                stream.Write(message, 0, message.Length);
+                var EndMessage = Encoding.UTF8.GetBytes("<EOF>");
+               // stream.Write(EndMessage,0,EndMessage.Length);
                 stream.Flush();
             }
         }
-       
     }
 }

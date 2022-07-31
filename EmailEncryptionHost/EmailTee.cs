@@ -119,7 +119,7 @@ namespace EmailEncryptionHost
             //The UUID is the same value as the applet.id field in the Intel(R) DAL Trusted Application manifest.
             string appletID = "f284e9ad-5c24-43d4-9ff5-c4c60d4eacfe";
             // This is the path to the Intel Intel(R) DAL Trusted Application .dalp file that was created by the Intel(R) DAL Eclipse plug-in.
-            string appletPath = @"C:\Users\USER\TEEdal\EmailEncryption\bin\EmailEncryption.dalp";
+            string appletPath = @"C:\Users\USER\TEEdal\EmailEncryption\bin\EmailEncryption-debug.dalp";
 
             // Install the Trusted Application
             Console.WriteLine("Installing the applet.");

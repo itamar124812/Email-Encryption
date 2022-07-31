@@ -55,13 +55,21 @@ namespace emailClient
                     option = l(option);
                     switch (option) {
                         case 5:
-                        var pb = CaHelper.getBP(data.Substring(0,lengthEmail+1));
-                            byte[] message = new byte[length - (lengthEmail + 4)];
-                            Array.Copy(buffer, (lengthEmail + 4), message, 0, length - (lengthEmail + 4));
-                            result =tee.encreptAndSign(message, pb);                           
-                            break;
+                            {
+                                var pb = CaHelper.getBP(data.Substring(0, lengthEmail + 1));
+                                byte[] message = new byte[length - (lengthEmail + 4)];
+                                Array.Copy(buffer, (lengthEmail + 4), message, 0, length - (lengthEmail + 4));
+                                result = tee.encreptAndSign(message, pb);
+                                break;
+                            }
                         case 6:
-                            break;
+                            {
+                                var pb = CaHelper.getBP(data.Substring(0, lengthEmail + 1));
+                                byte[] message = new byte[length - (lengthEmail + 4)];
+                                Array.Copy(buffer, (lengthEmail + 4), message, 0, length - (lengthEmail + 4));
+                                result = tee.descreptAndCheck(message, pb);
+                                break;
+                            }
                     }
                     stream.Write(result, 0, result.Length);                  
                 }
