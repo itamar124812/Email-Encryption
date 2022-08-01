@@ -65,8 +65,8 @@ namespace emailClient
                         case 6:
                             {
                                 var pb = CaHelper.getBP(data.Substring(0, lengthEmail + 1));
-                                byte[] message = new byte[length - (lengthEmail + 4)];
-                                Array.Copy(buffer, (lengthEmail + 4), message, 0, length - (lengthEmail + 4));
+                                byte[] message = new byte[length - (lengthEmail + 5)];
+                                Array.Copy(buffer, (lengthEmail + 5), message, 0, length - (lengthEmail + 5));
                                 result = tee.descreptAndCheck(message, pb);
                                 break;
                             }
