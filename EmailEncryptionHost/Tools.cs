@@ -9,6 +9,9 @@ namespace EmailEncryptionHost
     {
         static public byte[] ArrayUnionLength(byte[] array1, byte[] array2)
         {
+            if (array1 is null && array2 is null) return null;
+            else if (array1 is null) return array2;
+            else if (array2 is null) return array1;
             byte[] messageLength = BitConverter.GetBytes(array1.Length);
             byte[] result = new byte[array1.Length + messageLength.Length + array2.Length];
             Array.Copy(messageLength, 0, result, 0, messageLength.Length);

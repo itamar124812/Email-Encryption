@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StreamSupport
@@ -36,6 +37,11 @@ namespace StreamSupport
                         message = Encoding.UTF8.GetString(buffer);
                     }
                 }
+            }
+            else
+            {
+                return null;
+                
             }
             result = new byte[length];
             Array.Copy(buffer, result, result.Length);

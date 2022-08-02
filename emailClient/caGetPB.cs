@@ -33,7 +33,9 @@ namespace emailClient
         }
         public byte [] getBP(string email)
         {
-           return client.sendMessage(BitConverter.GetBytes(25).Concat( Encoding.UTF8.GetBytes(email)).ToArray());
+            var result= client.sendMessage(BitConverter.GetBytes(25).Concat( Encoding.UTF8.GetBytes(email)).ToArray());
+            client.endConnection();
+            return result;
        }
 
 

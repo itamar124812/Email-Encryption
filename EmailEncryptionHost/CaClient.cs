@@ -43,7 +43,8 @@ namespace EmailEncryptionHost
         public void SetMyPublicKey(byte[] pb)
         {
             pb = Tools.ArrayUnion(BitConverter.GetBytes(0), pb.Concat(Encoding.UTF8.GetBytes(email)).ToArray());
-            pb= tls.sendMessage(pb);        
+            pb= tls.sendMessage(pb);
+            tls.endConnection();
         }
         private X509Certificate2 ReadCaCertificate()
         {

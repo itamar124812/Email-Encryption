@@ -54,8 +54,16 @@ namespace StreamSupport
         }
         private void connectClient()
         {
-            if (client.Connected) return;
-            client.Connect(new IPEndPoint(iP, port));
+            try
+            {
+                if (client.Connected) return;
+                client.Connect(new IPEndPoint(iP, port));
+            }
+            catch(ObjectDisposedException e)
+            {
+                client = new TcpClient();
+                client.Connect(new IPEndPoint(iP, port));
+            }
         }
         private static bool ValidateServerCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
@@ -69,6 +77,11 @@ namespace StreamSupport
             TlsStreamSup.WriteMessage(message, stream);
             byte[] serverResponse = TlsStreamSup.ReadStream(stream);
             return serverResponse;        
+        }
+        public void endConnection()
+        {
+            _stream = null;
+            client.Close();
         }
     
     }
