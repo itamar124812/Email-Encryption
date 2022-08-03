@@ -6,7 +6,8 @@ using System.Xml.Linq;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools;
-using Microsoft.Office.Interop.Outlook;
+
+
 
 namespace OutlookAddIn
 {
@@ -32,7 +33,7 @@ namespace OutlookAddIn
                 taskPane.Visible;
         }
 
-
+        
         void InspectorWrapper_Close()
         {
             if (taskPane != null)
@@ -97,26 +98,31 @@ namespace OutlookAddIn
             var senderEmail = mailItem.SenderEmailAddress;
 
             Encrypte Enc = new Encrypte(senderEmail, body);
+            string messageToEnc = subject + "☀" + body;
+            var encMsg = Enc.EncrypteMsgAndSign(messageToEnc, senderEmail);
 
-            var encMsg = Enc.EncrypteMsg(body);
-            var signMsg = Enc.SignMsg(body, senderEmail);
 
-
-            SendForm form = new SendForm(senderEmail, subject, body, encMsg, signMsg);
+            SendForm form = new SendForm(senderEmail, subject, body, "The message is ready for delivery.\nfor sending please press send:", "");
             form.ShowDialog();
-
-
+            
+            
 
             if (!SendForm.Send())
                 Cancel = true;
             else
             {
-                mailItem.Body = encMsg + "\n" + Encrypte.p_separator_character + "\n" + signMsg; //enc + (4 * new line) + sign
+                var atts = mailItem.Attachments;
+                atts.Add(@"..\file.bin");
+                mailItem.Subject = "encrypted message";
+                mailItem.Body = "The message has been encrypted and signed.\n" + Encrypte.p_separator_character; 
+                // mailItem.Body = encMsg + "\n" + Encrypte.p_separator_character ; //enc + (4 * new line) + sign
                 Cancel = false;
             }
 
-
+            
         }
+
+       
 
         void Inspectors_NewInspector(Outlook.Inspector Inspector)
         {
@@ -151,7 +157,7 @@ namespace OutlookAddIn
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-
+        
         #endregion
     }
 }

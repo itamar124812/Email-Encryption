@@ -1,4 +1,6 @@
-﻿namespace OutlookAddIn
+﻿using System;
+
+namespace OutlookAddIn
 {
     partial class TaskPaneControl
     {
@@ -36,8 +38,9 @@
             // checkSignBtn
             // 
             this.checkSignBtn.Location = new System.Drawing.Point(0, 0);
+            this.checkSignBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkSignBtn.Name = "checkSignBtn";
-            this.checkSignBtn.Size = new System.Drawing.Size(111, 28);
+            this.checkSignBtn.Size = new System.Drawing.Size(83, 23);
             this.checkSignBtn.TabIndex = 0;
             this.checkSignBtn.Text = "check sign";
             this.checkSignBtn.UseVisualStyleBackColor = true;
@@ -45,9 +48,10 @@
             // 
             // decrypteBtn
             // 
-            this.decrypteBtn.Location = new System.Drawing.Point(0, 45);
+            this.decrypteBtn.Location = new System.Drawing.Point(0, 37);
+            this.decrypteBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.decrypteBtn.Name = "decrypteBtn";
-            this.decrypteBtn.Size = new System.Drawing.Size(111, 27);
+            this.decrypteBtn.Size = new System.Drawing.Size(83, 22);
             this.decrypteBtn.TabIndex = 1;
             this.decrypteBtn.Text = "show resulte";
             this.decrypteBtn.UseVisualStyleBackColor = true;
@@ -55,23 +59,32 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(57, 18);
+            this.button3.Location = new System.Drawing.Point(43, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(8, 21);
+            this.button3.Size = new System.Drawing.Size(6, 17);
             this.button3.TabIndex = 2;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // TaskPaneControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.decrypteBtn);
             this.Controls.Add(this.checkSignBtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TaskPaneControl";
+            this.Size = new System.Drawing.Size(112, 122);
             this.ResumeLayout(false);
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
         }
 
         #endregion
