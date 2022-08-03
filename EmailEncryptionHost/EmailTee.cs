@@ -44,7 +44,8 @@ namespace EmailEncryptionHost
             int cmdID = 2;
             byte[] messageLength = BitConverter.GetBytes(message.Length);
             byte[] sendBuff = Tools.ArrayUnionLength(message, ReciverPK);
-            byte[] recvBuff = new byte[2000];
+            byte[] recvBuff = new byte[2500];
+            //Console.WriteLine(Encoding.UTF8.GetString(sendBuff));
             try
             {
                 return sendMessage(sendBuff, recvBuff, cmdID, out responseCode);

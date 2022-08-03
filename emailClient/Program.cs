@@ -42,7 +42,7 @@ namespace emailClient
             {
                 var client = server.AcceptTcpClient();
                 NetworkStream stream = client.GetStream();
-                byte[] buffer = new byte[2000];
+                byte[] buffer = new byte[2500];
                 byte[] result=new byte[2];
                 int length = 0;            
                 while ((length = stream.Read(buffer, 0, buffer.Length)) != 0)
