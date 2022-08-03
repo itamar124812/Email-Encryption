@@ -17,7 +17,9 @@ public class EmailEncryption extends IntelApplet {
     RsaAlg rsaAlg=RsaAlg.create();
     short modSize=(short)256;
     short keySize=(short)32;
-    
+    short pesize=(short)4;
+    short dsize=(short)256;
+    int segLength=240;
 
 	public byte [] generateKeys()
 	{
@@ -31,7 +33,24 @@ public class EmailEncryption extends IntelApplet {
 		FlashStorage.writeFlashData(0, pv, 0, pv.length);
 		return pb;	
 	}
+	public byte[] setkeys()
+	{
+		if(FlashStorage.getFlashDataSize(0)!=0) {
+		rsaAlg.setHashAlg(rsaAlg.HASH_TYPE_SHA256);
+		rsaAlg.setPaddingScheme(rsaAlg.PAD_TYPE_PKCS1);
+		byte [] pb=new byte[modSize+pesize];
+		byte [] pv=new byte[modSize+pesize+dsize];
+		FlashStorage.readFlashData(0, pv, 0);
+		rsaAlg.setKey(pv, (short)0, modSize, pv,modSize ,pesize, pv,(short)(pesize+ modSize),(short)(pv.length-(pesize+ modSize)));
+		rsaAlg.getKey(pb,(short) 0, pb, rsaAlg.getModulusSize());
+		return pb;
+		}
+		else 
+		{
+			return generateKeys();
+		}
 	
+	}
 	
 	public byte [] encrypteMessage(byte [] message,byte [] pb)
 	{
@@ -40,7 +59,29 @@ public class EmailEncryption extends IntelApplet {
 		Encreptor.setHashAlg(rsaAlg.HASH_TYPE_SHA256);
 		Encreptor.setPaddingScheme(rsaAlg.PAD_TYPE_PKCS1);		
 		Encreptor.setKey(pb, (short) 0, modSize, pb, modSize,(short)(pb.length-modSize));
-		Encreptor.encryptComplete(message, (short)0, (short)message.length, encrypted, (short)0);
+		if(message.length>256)
+		{
+			
+			byte[] seg=new byte[(message.length/segLength + 1)*256];
+			int index=0;
+			short secondIndex=0;
+			while(index<message.length)
+			{
+				byte [] segment=new byte[segLength];
+				if(index+segment.length>message.length)
+					ArrayUtils.copyByteArray(message, (short)index, segment, (short)0, (short)(message.length-index));
+				else ArrayUtils.copyByteArray(message, (short)index, segment, (short)0, (short)segment.length);
+				Encreptor.encryptComplete(segment, (short)0, (short)segment.length, encrypted, (short)0);
+				ArrayUtils.copyByteArray(encrypted, (short)0, seg, (short)secondIndex, (short)encrypted.length);
+				secondIndex+=256;
+				index+=segLength;
+			}
+			encrypted=seg;
+		}
+		else 
+		{
+			Encreptor.encryptComplete(message, (short)0, (short)message.length, encrypted, (short)0);
+		}
 		byte [] sig=sign(encrypted);
 		byte [] result=new byte[encrypted.length+sig.length];
 		ArrayUtils.copyByteArray(encrypted, (short)0, result, (short)0, (short)encrypted.length);
@@ -60,6 +101,19 @@ public class EmailEncryption extends IntelApplet {
 	public byte[] decrypt(byte[] message)
 	{
 		byte [] result=new byte [2000];
+		if(message.length>256)
+		{
+			int index=0;
+			int secoundIndex=0;
+		    while(secoundIndex<message.length) {
+		    byte [] segment=new byte[modSize];
+		    ArrayUtils.copyByteArray(message, (short)secoundIndex, segment, (short)0, (short)segment.length);
+			rsaAlg.decryptComplete(segment, (short)0, (short)segment.length,result, (short)index);
+			index+=segLength;
+			secoundIndex+=256;
+		    }
+		    return result;		
+		}
 		rsaAlg.decryptComplete(message, (short)0, (short)message.length,result, (short)0);
 		return result;
 		
@@ -99,14 +153,14 @@ public class EmailEncryption extends IntelApplet {
 		if(request != null)
 		{
 			DebugPrint.printString("Received buffer:");
-			DebugPrint.printBuffer(request);
+			
 		}
 		byte[] myResponse = { 'O', 'K' };
 		switch (commandId)
 		{
 		case 1:
 		{
-			myResponse=generateKeys();
+			myResponse=setkeys();
 			break;
 		}
 		case 2:
@@ -115,11 +169,7 @@ public class EmailEncryption extends IntelApplet {
 			byte []message=new byte[messageLength];
 			byte [] pb=new byte[request.length-(messageLength+4)];
 			ArrayUtils.copyByteArray(request, (short)4, message, (short)0, (short)messageLength);
-			DebugPrint.printString("Message:");
-			DebugPrint.printBuffer(message);
 			ArrayUtils.copyByteArray(request, (short)(4+messageLength), pb, (short)0, (short)request.length-(messageLength+4));
-			DebugPrint.printString("public Key:");
-			DebugPrint.printBuffer(pb);
 			myResponse=encrypteMessage(message, pb);
 			break;
 		}
