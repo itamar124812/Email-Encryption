@@ -8,9 +8,9 @@ In the TEE was generated pair of keys: private(d: 2048 bit) and public key(mod: 
 <img src="https://user-images.githubusercontent.com/72938168/182718570-219bba3c-8160-4224-bbd7-9ba1fafbd8f4.png"></br>
 The host sends the public key to the CA Server (on SslStream using TlsClient class found in StreamSupport).</br>
 The CA signs on the host's public key, store it and returns the signing + the original key back to host.</br>
-Now the user can sign and encrypt emails as well as decrypt and verify emails who send to him.</br>
+Now the user can sign and encrypt emails as well as decrypt and verify emails sent to him.</br>
 <h3>Encrypt and sign message</h3></br>
-The user writes a normal new message in outlook... but when the user clicks send - suprise:</br>
+The user writes a normal new message in outlook... but when the user clicks send - surprise:</br>
 <img src="https://user-images.githubusercontent.com/72938168/182726179-95cc0e61-a64f-4768-978f-ac11bcdaaa98.png" title="The user writes a normal message">
 We intercept outlook event (item send) and take the email recipient address, subject and body from the message.</br>
 <img src="https://user-images.githubusercontent.com/72938168/182722046-9ab8f607-e6a6-4079-b811-2e420941e458.png">
