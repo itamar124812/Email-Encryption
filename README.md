@@ -19,7 +19,7 @@ They are all sent to the host which asks from the CA the recipient public key (v
 The host sends the recipient's public key and the email content for the TEE. The TEE encrypts the email content with the recipient's public key and sign on the encrypted message with the client's private key and sends the result back the host which sends it back to outlook add-in.</br>
 The result is attached to the original email as a binary file and the user can send it.</br>
 <img src="https://user-images.githubusercontent.com/72938168/182726424-72062992-5ff7-4190-88b2-066776670d5c.png">
-<h3>Dectypt and Verify</h3>
+<h3>Decrypt and Verify</h3>
 So this is what the message we sent earlier looks like on the recipient's side:
 <img src="https://user-images.githubusercontent.com/72938168/182726807-95fbdb2d-eb80-462b-b17e-429c81d9d0ce.png">
 The recipient will need to click on the Add-ins option in the task pan.</br>
