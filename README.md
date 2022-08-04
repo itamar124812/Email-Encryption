@@ -7,7 +7,7 @@ When you download the email add-in:</br>
 In the TEE was generated pair of keys: private(d: 2048 bit) and public key(mod: 2048 bit, e:65537). The TEE also store the keys in it's memory and sends the public key to the host.</br>
 <img src="https://user-images.githubusercontent.com/72938168/182718570-219bba3c-8160-4224-bbd7-9ba1fafbd8f4.png"></br>
 The host sends the public key to the CA Server (on SslStream using TlsClient class found in StreamSupport).</br>
-The CA signs on the host's public key, store it and returns the signing + the original key back to host.</br>
+The CA signs on the host's public key, stores it and returns the signing + the original key back to host.</br>
 Now the user can sign and encrypt emails as well as decrypt and verify emails sent to him.</br>
 <h3>Encrypt and sign message</h3></br>
 The user writes a normal new message in outlook... but when the user clicks send - surprise:</br>
