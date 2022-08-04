@@ -16,7 +16,7 @@ We intercept outlook event (item send) and take the email recipient address, sub
 <img src="https://user-images.githubusercontent.com/72938168/182722046-9ab8f607-e6a6-4079-b811-2e420941e458.png">
 <!-- img src="https://user-images.githubusercontent.com/72938168/182726179-95cc0e61-a64f-4768-978f-ac11bcdaaa98.png" -->
 They are all sent to the host which asks from the CA the recipient public key (via their email and again the communication between them is secure).</br>
-The host sends the recipient's public key and the email content for the TEE. The TEE encrypts the email content with the recipient's public key and sign on the encrypted message with the client's private key and sends the result back the host which sends it back to outlook add-in.</br>
+The host sends the recipient's public key and the email content for the TEE. The TEE encrypts the email content with the recipient's public key and sign on the encrypted message with the client's private key and sends the result back to the host which sends it back to outlook add-in.</br>
 The result is attached to the original email as a binary file and the user can send it.</br>
 <img src="https://user-images.githubusercontent.com/72938168/182726424-72062992-5ff7-4190-88b2-066776670d5c.png">
 <h3>Decrypt and Verify</h3>
