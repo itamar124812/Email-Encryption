@@ -22,7 +22,11 @@ The result is attached to the original email as a binary file and the user can s
 <h3>Decrypt and Verify</h3>
 So this is what the message we sent earlier looks like on the recipient's side:
 <img src="https://user-images.githubusercontent.com/72938168/182726807-95fbdb2d-eb80-462b-b17e-429c81d9d0ce.png">
-The recipient will need to click on the Add-ins option in the task pan.</br>
+The recipient will need to click on the Add-ins option in the task pan and then click on the Decrypt button.</br>
+The message will go from the add-on through the host (which asks the CA for the sender's public key) to the recipient's TEE, where the signature will be verified and the original message will be decrypted and then the add-in will display the decrypted message like this:
+<img src="https://user-images.githubusercontent.com/72938168/183265324-1aac8f84-7ba8-4ba2-8747-73fee89cd5ef.png">
+
+
 
 
 
