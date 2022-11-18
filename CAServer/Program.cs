@@ -68,17 +68,6 @@ namespace CAServer
             }
             store1.Close();
             store.Close();
-            /*
-            X509Certificate2 x509 = new X509Certificate2();
-            X509Store store = new X509Store( StoreLocation.CurrentUser) ;
-            store.Open(OpenFlags.ReadWrite);        
-            byte[] file = Tools.ReadFile(@"C:\Users\USER\Source\Repos\CAServer\public_privatekey.pfx");
-            x509.Import(file, password, X509KeyStorageFlags.Exportable);
-            RSA = new encryptionRSA(x509);
-            store.Add(x509);
-            Console.WriteLine(store.Name);
-            store.Close();*/
-
         }
         static void ProcessClient(TcpClient client)
         {
@@ -123,7 +112,7 @@ namespace CAServer
                 else
                 {
                     X509Certificate2 x509 = new X509Certificate2();
-                    var file=Tools.ReadFile(@"C:\Users\USER\Source\Repos\CAServer\rootCA.crt");
+                    var file=Tools.ReadFile(@"pathOfMyPK.crt");
                     x509.Import(file, "", X509KeyStorageFlags.Exportable);
                     MyPb = x509.RawData;
                     return MyPb;
